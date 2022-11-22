@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="index.html">Home</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="About.html">About</a>
+                </div>              
+            </div>
+
+            <div class="right-side">
+                <div class="brand">
+                    <div>Crafting Buddies</div>
+                </div>              
+            </div>
+        </div>
+
+       
+
+    </div>
+
+</body>
+<script>
+    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper')
+
+/*
+The console.log(portfolioItem.childNodes) function.It will display all the elements in the node with an element
+number. Element numbers within the node start with 0 similar to a list or an array.You can refer the the elements by
+using their element number, ie[0] or portfolioItem.childNodes[1] ...this will specificall refer to
+the portfolio - image - background
+
+The developer, Jorden Hudgens, uses the console.log to make sure that he is pointing to the right element that he wants to modify.
+    He will usually run a section of script WITH the console.log and identify what element is output to the console during mouseover.
+    THEN he removes the console.log from the script because he knows that he is pointing to the correct element.
+*/
+
+    
+    portfolioItems.forEach(portfolioItem => {
+        portfolioItem.addEventListener('mouseover', () => {
+            //console.log(portfolioItem.childNodes[1].classList);
+            //Is classList a constant in JavaScript?  I don't remember creating this...
+            portfolioItem.childNodes[1].classList.add('img-darken');
+        })
+       
+        portfolioItem.addEventListener('mouseout', () => {           
+            //console.log(portfolioItem.childNodes[1].classList);
+            portfolioItem.childNodes[1].classList.remove('img-darken');
+        })
+    })
+</script>
+</html>
